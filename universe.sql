@@ -100,4 +100,5 @@ INSERT INTO moon(name, age, planet_id) VALUES
 ('Nix', 3, (SELECT planet_id FROM planet WHERE name = 'Pluto')),
 ('Hydra', 3, (SELECT planet_id FROM planet WHERE name = 'Pluto')),
 ('Kerberos', 3, (SELECT planet_id FROM planet WHERE name = 'Pluto')),
-('Styx', 3, (SELECT planet_id FROM planet WHERE name = 'Pluto'));
+('Styx', 3, (SELECT planet_id FROM planet WHERE name = 'Pluto'))
+);
