@@ -35,6 +35,14 @@ planet_id SERIAL REFERENCES planet(planet_id),
 description TEXT
 );
 
+CREATE TABLE secret (
+secret_id SERIAL PRIMARY KEY,
+name VARCHAR(30) UNIQUE NOT NULL,
+age int NOT NULL,
+moon_id SERIAL REFERENCES moon(moon_id),
+description TEXT
+);
+
 INSERT INTO galaxy(name, age, dist_from_earth, has_life) VALUES
 ('Milky Way', 320, 0, true),
 ('Canis Majoris', 500, 102, false),
