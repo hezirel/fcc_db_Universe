@@ -16,7 +16,7 @@ star_id SERIAL PRIMARY KEY,
 name VARCHAR(30) UNIQUE NOT NULL,
 age int NOT NULL,
 galaxy_id SERIAL REFERENCES galaxy(galaxy_id),
-description TEXT,
+description TEXT
 );
 
 CREATE TABLE planet (
@@ -24,7 +24,7 @@ planet_id SERIAL PRIMARY KEY,
 name VARCHAR(30) UNIQUE NOT NULL,
 age int NOT NULL,
 star_id SERIAL REFERENCES star(star_id),
-description TEXT,
+description TEXT
 );
 
 CREATE TABLE moon (
@@ -32,7 +32,7 @@ moon_id SERIAL PRIMARY KEY,
 name VARCHAR(30) UNIQUE NOT NULL,
 age int NOT NULL,
 planet_id SERIAL REFERENCES planet(planet_id),
-description TEXT,
+description TEXT
 );
 
 INSERT INTO galaxy(name, age, dist_from_earth, has_life) VALUES
@@ -49,7 +49,7 @@ INSERT INTO galaxy(name, age, dist_from_earth, has_life) VALUES
 ('Pisces', 4000, 1000, false),
 ('Aquila', 4500, 1100, false),
 ('Cassiopeia', 5000, 1200, false),
-('Phoenix', 16000, 3400, false),
+('Phoenix', 16000, 3400, false);
 
 INSERT INTO star(name, age, galaxy) VALUES
 ('Sun', 300, 'Milky Way'),
