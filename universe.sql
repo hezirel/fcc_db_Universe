@@ -2,7 +2,7 @@ CREATE DATABASE universe;
 \c universe
 
 CREATE TABLE galaxy (
-id SERIAL,
+galaxy_id SERIAL PRIMARY KEY,
 name VARCHAR(30) UNIQUE NOT NULL PRIMARY KEY,
 age int NOT NULL,
 dist_from_earth int,
@@ -12,8 +12,8 @@ sphere bool
 );
 
 CREATE TABLE star (
-id SERIAL PRIMARY KEY,
-name VARCHAR(30) UNIQUE NOT NULL,
+star_id SERIAL PRIMARY KEY,
+name VARCHAR(30) UNIQUE NOT NULL PRIMARY KEY,
 age int NOT NULL,
 galaxy VARCHAR(30) NOT NULL,
 description TEXT,
@@ -23,8 +23,8 @@ CONSTRAINT fk_galaxy
 );
 
 CREATE TABLE planet (
-id SERIAL PRIMARY KEY,
-name VARCHAR(30) UNIQUE NOT NULL,
+planet_id SERIAL PRIMARY KEY,
+name VARCHAR(30) UNIQUE NOT NULL PRIMARY KEY,
 age int NOT NULL,
 star VARCHAR(30) NOT NULL,
 description TEXT,
@@ -34,8 +34,8 @@ CONSTRAINT fk_star
 );
 
 CREATE TABLE moon (
-id SERIAL PRIMARY KEY,
-name VARCHAR(30) UNIQUE NOT NULL,
+moon_id SERIAL PRIMARY KEY,
+name VARCHAR(30) UNIQUE NOT NULL PRIMARY KEY,
 age int NOT NULL,
 planet VARCHAR(30) NOT NULL,
 description TEXT,
@@ -58,31 +58,7 @@ INSERT INTO galaxy(name, age, dist_from_earth, has_life) VALUES
 ('Pisces', 4000, 1000, false),
 ('Aquila', 4500, 1100, false),
 ('Cassiopeia', 5000, 1200, false),
-('Scutum', 5500, 1300, false),
-('Sculptor', 6000, 1400, false),
-('Columba', 6500, 1500, false),
-('Puppis', 7000, 1600, false),
-('Tucana', 7500, 1700, false),
-('Pavo', 8000, 1800, false),
-('Phoenix', 8500, 1900, false),
-('Ara', 9000, 2000, false),
-('Vela', 9500, 2100, false),
-('Pictor', 10000, 2200, false),
-('Caelum', 10500, 2300, false),
-('Pyxis', 11000, 2400, false),
-('Norma', 11500, 2500, false),
-('Reticulum', 12000, 2600, false),
-('Circinus', 12500, 2700, false),
-('Volans', 13000, 2800, false),
-('Indus', 13500, 2900, false),
-('Lacerta', 14000, 3000, false),
-('Ara', 14500, 3100, false),
-('Tucana', 15000, 3200, false),
-('Pavo', 15500, 3300, false),
 ('Phoenix', 16000, 3400, false),
-('Ara', 16500, 3500, false),
-('Vela', 17000, 3600, false),
-('Pictor', 17500, 3700,
 
 INSERT INTO star(name, age, galaxy) VALUES
 ('Sun', 300, 'Milky Way'),
