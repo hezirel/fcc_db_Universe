@@ -3,7 +3,7 @@ CREATE DATABASE universe;
 
 CREATE TABLE galaxy (
 galaxy_id SERIAL PRIMARY KEY,
-name VARCHAR(30) UNIQUE NOT NULL PRIMARY KEY,
+name VARCHAR(30) UNIQUE NOT NULL,
 age int NOT NULL,
 dist_from_earth int,
 gravity numeric,
@@ -13,7 +13,7 @@ sphere bool
 
 CREATE TABLE star (
 star_id SERIAL PRIMARY KEY,
-name VARCHAR(30) UNIQUE NOT NULL PRIMARY KEY,
+name VARCHAR(30) UNIQUE NOT NULL,
 age int NOT NULL,
 galaxy VARCHAR(30) NOT NULL,
 description TEXT,
@@ -24,7 +24,7 @@ CONSTRAINT fk_galaxy
 
 CREATE TABLE planet (
 planet_id SERIAL PRIMARY KEY,
-name VARCHAR(30) UNIQUE NOT NULL PRIMARY KEY,
+name VARCHAR(30) UNIQUE NOT NULL,
 age int NOT NULL,
 star VARCHAR(30) NOT NULL,
 description TEXT,
@@ -35,7 +35,7 @@ CONSTRAINT fk_star
 
 CREATE TABLE moon (
 moon_id SERIAL PRIMARY KEY,
-name VARCHAR(30) UNIQUE NOT NULL PRIMARY KEY,
+name VARCHAR(30) UNIQUE NOT NULL,
 age int NOT NULL,
 planet VARCHAR(30) NOT NULL,
 description TEXT,
