@@ -113,7 +113,7 @@ INSERT INTO moon(name, age, planet_id) VALUES
 ('Proxima a', 3, (SELECT planet_id FROM planet WHERE name = 'Proxima Centauri a')),
 ('Luyten b', 3, (SELECT planet_id FROM planet WHERE name = 'Luyten b'));
 
-INSERT INTO secret (name, age, moon_id, description) VALUES
+INSERT INTO secret (name, age, moon_id) VALUES
 ('Nazi Moon Base', 500, (SELECT moon_id FROM moon WHERE name = 'Moon')),
 ('Maya Moon Base', 800, (SELECT moon_id FROM moon WHERE name = 'Proxima a')),
 ('Inca Moon Base', 800, (SELECT moon_id FROM moon WHERE name = 'Styx'));
