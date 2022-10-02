@@ -15,33 +15,33 @@ CREATE TABLE star (
 star_id SERIAL PRIMARY KEY,
 name VARCHAR(30) UNIQUE NOT NULL,
 age int NOT NULL,
-galaxy VARCHAR(30) NOT NULL,
+galaxy_id VARCHAR(30) NOT NULL,
 description TEXT,
 CONSTRAINT fk_galaxy
-    FOREIGN KEY(galaxy)
-        REFERENCES galaxy(name)
+    FOREIGN KEY(galaxy_id)
+        REFERENCES galaxy(galaxy_id)
 );
 
 CREATE TABLE planet (
 planet_id SERIAL PRIMARY KEY,
 name VARCHAR(30) UNIQUE NOT NULL,
 age int NOT NULL,
-star VARCHAR(30) NOT NULL,
+star_id VARCHAR(30) NOT NULL,
 description TEXT,
 CONSTRAINT fk_star
-    FOREIGN KEY(star)
-        REFERENCES star(name)
+    FOREIGN KEY(star_id)
+        REFERENCES star(star_id)
 );
 
 CREATE TABLE moon (
 moon_id SERIAL PRIMARY KEY,
 name VARCHAR(30) UNIQUE NOT NULL,
 age int NOT NULL,
-planet VARCHAR(30) NOT NULL,
+planet_id VARCHAR(30) NOT NULL,
 description TEXT,
-CONSTRAINT fk_planet
-    FOREIGN KEY(planet)
-        REFERENCES planet(name)
+CONSTRAINT fk_planet_id
+    FOREIGN KEY(planet_id)
+        REFERENCES planet(planet_id)
 );
 
 INSERT INTO galaxy(name, age, dist_from_earth, has_life) VALUES
