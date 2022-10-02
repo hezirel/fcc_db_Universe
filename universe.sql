@@ -100,5 +100,7 @@ INSERT INTO moon(name, age, planet_id) VALUES
 ('Nix', 3, (SELECT planet_id FROM planet WHERE name = 'Pluto')),
 ('Hydra', 3, (SELECT planet_id FROM planet WHERE name = 'Pluto')),
 ('Kerberos', 3, (SELECT planet_id FROM planet WHERE name = 'Pluto')),
-('Styx', 3, (SELECT planet_id FROM planet WHERE name = 'Pluto'))
-);
+('Styx', 3, (SELECT planet_id FROM planet WHERE name = 'Pluto')),
+('Proxima b', 3, (SELECT planet_id FROM planet WHERE name = 'Proxima Centauri b')),
+('Proxima a', 3, (SELECT planet_id FROM planet WHERE name = 'Proxima Centauri a')),
+('Luyten b', 3, (SELECT planet_id FROM planet WHERE name = 'Luyten b'));
